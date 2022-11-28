@@ -30,13 +30,20 @@ public class ConfiguracionCliente implements IConfiguracionPersona, Serializable
     }
 
     @Override
-    public boolean agregar(String nombre, String id, String user, String numero) {
+    public boolean agregar(String nombre, String id, String user, String numero) throws Exception {
+        Cliente cliente = new Cliente();
         for (Cliente c : clientes) {
             if (c.getUsuario().equals(user)) {
                 return false;
             }
         }
-        Cliente cliente = new Cliente(nombre, id, numero);
+        if (!cliente.setNumero(numero)) {
+            throw new Exception ("Formato Numero Contacto Incorrecto");
+        }
+        if (!cliente.setID(id)) {
+            throw new Exception("Formato Cedula Incorrecto");
+        }
+        cliente.setNombre(nombre);
         clientes.add(cliente);
         return true;
     }

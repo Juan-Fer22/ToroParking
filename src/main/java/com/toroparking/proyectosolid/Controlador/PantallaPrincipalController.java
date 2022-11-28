@@ -27,7 +27,6 @@ public class PantallaPrincipalController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        this.txtFecha = new Text();
         String fechaActual = ToroParking.getInstance().getConfiguracionGeneral().getFecha();
         txtFecha.setText(fechaActual);
         timeline.setCycleCount(Timeline.INDEFINITE);

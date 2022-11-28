@@ -119,7 +119,7 @@ public class PantallaAdministradoresController implements Initializable {
     }
 
     @FXML
-    private void agregarAdmin(ActionEvent event) {
+    private void agregarAdmin(ActionEvent event) throws Exception {
         String usuarioIngresado = txtFieldUser.getText();
         String passIngresado = txtFieldPass.getText();
 

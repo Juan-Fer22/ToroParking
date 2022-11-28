@@ -39,13 +39,19 @@ public class Usuario implements Serializable {
         this.numero = numero;
     }
 
-    public void setID (String id) {
-        if(Pattern.matches("([0-9]{1}\\.)?([0-9]{1,3}\\.){2}[0-9]{3}", id))
+    public boolean setID (String id) {
+        if(Pattern.matches("([0-9]{1}\\.)?([0-9]{1,3}\\.){2}[0-9]{3}", id)) {
             this.id = id;
+            return true;
+        }
+        return false;
     }
 
-    public void setNumero (String numero) {
-        if(Pattern.matches("\\+[0-9]{2,3}-([0-9]{3}-){2}[0-9]{4}", numero))
+    public boolean setNumero (String numero) {
+        if(Pattern.matches("\\+[0-9]{2,3}-([0-9]{3}-){2}[0-9]{4}", numero)) {
             this.numero = numero;
+            return true;
+        }
+        return false;
     }
 }

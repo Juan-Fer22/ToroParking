@@ -41,3 +41,5 @@ public class Cliente extends Usuario implements IDescuentos, Serializable {
         return "Nombre: " + nombre + " | C.C: " + id;
     }
 }
+
+
